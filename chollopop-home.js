@@ -1,6 +1,9 @@
-import { itemListController } from "./items-list/items-controller.js";
+import { itemListController } from "./items-list/items-list-controller.js";
 
 
-const itemListContainer = document.querySelector('.item-list');
-itemListController(itemListContainer);
+document.addEventListener('DOMContentLoaded', () => {
+  const itemsListContainer = document.querySelector('.item-list');
+  itemListController(itemsListContainer);  
+});
+
 
