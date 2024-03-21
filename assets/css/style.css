@@ -43,9 +43,9 @@ a {
   text-decoration: none;
   color: black;
 }
-/* a:hover{
-  background-color: #c1eac1;
-} */
+a:hover{
+  background-color: khaki;
+}
 
 h1.big{
   font-size: 3em;
