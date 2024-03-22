@@ -8,14 +8,13 @@ export const loginController = (loginForm) => {
     submitLoginForm(loginForm);
   });
 
-  const submitLoginForm = (loginForm) => {
+  const submitLoginForm = async (loginForm) => {
     const {user, password} = getLoginFormData(loginForm);
 
     try {
-      loginUser(user, password);
-      //pedir datos al model y recoger el token jwt
-      //guardarlo en localStorage
-      //redireccionar a pag principal
+      const jwt = await loginUser(user, password);
+      localStorage.setItem('tokenJWT', jwt);
+      window.location = "../index.html";
     } catch (error) {
       alert (error);
     }
@@ -23,7 +22,6 @@ export const loginController = (loginForm) => {
 
 
   function getLoginFormData(loginForm){
-    
     const formData = new FormData(loginForm);
     const user = formData.get('email');
     const password = formData.get('password');

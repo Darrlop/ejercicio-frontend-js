@@ -19,19 +19,15 @@ export const loginUser = async (user, password) => {
     response = await fetch(urlAuthLog, options);
     const data = await response.json();
 
-    // Verifico esto de las respuestas
+    // Verifico respuesta
     if (!response.ok){
-      console.log("Por el !")
-      console.log (data);
+      throw new Error(data.message);
     }
     if(response.ok){
-      //return data.accesToken;
-      console.log(data);
-      console.log (data.accessToken);
+      return data.accessToken;
     }
-
   } catch (error) {
-    throw ("Peto..." + error);
+    throw ("Error realizando el login de usuario... " + error);
   }
 
 }

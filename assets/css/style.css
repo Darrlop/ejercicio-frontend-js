@@ -42,10 +42,15 @@ body{
 a {
   text-decoration: none;
   color: black;
+  margin: 0.5rem;
 }
-a:hover{
-  background-color: khaki;
-}
+a.asButton:hover{
+  background-color: tan;
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: 1px black
+} 
+
 
 h1.big{
   font-size: 3em;
@@ -59,4 +64,8 @@ button{
 }
 button:hover{
   background-color: tan;
+}
+
+button.normalize{
+  margin: 1rem 1rem 0rem 0rem;
 }
