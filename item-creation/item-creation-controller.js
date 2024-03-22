@@ -1,19 +1,23 @@
 import { urlNoPhoto } from "../utils/const_var.js";
+import { createItem } from "./item-creation-model.js";
 
 export const itemCreationController = (itemCreationForm) => {
 
   
-  itemCreationForm.addEventListener('submit', (event) => {
+  itemCreationForm.addEventListener('submit', async (event) => {
 
     event.preventDefault();
 
     const fields = getFormFields(itemCreationForm);
 
 
-    console.log(fields);   //BALIZA AQUÏ ME QUEDË
+    console.log(fields);   
 
-    testFormFields(itemCreationForm);
+    const errorsInFields = testFormFields(itemCreationForm);
+    errorsInFields.length === 0 ? await createItem(fields) :  alert (errorsInFields.join(" "));
+    window.location.href= "./index.html";
   
+      
   });
 
   const getFormFields = (itemCreationForm) => {
@@ -37,13 +41,12 @@ export const itemCreationController = (itemCreationForm) => {
   const testFormFields = (itemCreationForm) => {
 
     let errors = [];
-    
-    if (!isValidPrice(itemCreationForm.querySelector('#price')))
+    if (!isValidPrice(itemCreationForm.querySelector('#price').value))
       { errors.push(" Error: el precio introducido no es numérico") }
-    if (!testURL(itemCreationForm.querySelector('#photo')))
+    if (!testURL(itemCreationForm.querySelector('#photo').value))
       { errors.push("Error: La url a la fotografía no es válida"); }
     
-    
+    return errors;
   }
 
   function isValidPrice (priceString){
@@ -56,7 +59,7 @@ export const itemCreationController = (itemCreationForm) => {
       new URL(urlString);
       return true;
     } catch (error) {
-      return false;
+      return (urlString.length !== 0) ? false : true;
     }
   }
 
