@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/header.css">
+    <link rel="stylesheet" href="./assets/css/checkbox.css">
+    <title>Chollopop</title>
+  </head>
+  <body>
+    
+    <header class="header">
+      <div class="header__container">
+        <img class="logo" src="https://res.cloudinary.com/dyyhithd8/image/upload/v1710875622/chollopop-transparente_j1s1zu.png" alt="logo Chollopop">
+      </div>
+      <div class="header__container__tittle">
+        <h1 class="big">Chollopop</h1>
+        <h3>Tu web molona de compra-venta</h3>
+      </div>
+    </header>  
+
+    <nav><h4><a  class='asButton' href="./index.html"> [ Salir ] </a></h4></nav><hr>
+    <br>
+    <h2>Creación de anuncio</h2>
+    <form id="creation">
+      <label for="name">Nombre del artículo: </label><br>
+      <input type="text" id="name" name="name" required />
+      <br><br>
+      <label for="description">Descripción: </label><br>
+      <textarea id="description" name="description" rows="10", cols="50"></textarea>
+      <br><br>
+
+      <!-- <label for="activo">¿Activo?</label>
+      <input type="checkbox" id="buyORsell" name="buyORsell" value="true"> -->
+      
+        <!--id="cb5"-->
+      <div class="checkbox-wrapper-10">
+        <label>¿Compra o venta? </label>
+        <br><br>
+      
+        <input class="tgl tgl-flip" id="buyORsell" type="checkbox" checked/>
+        <label class="tgl-btn" data-tg-off="Compra" data-tg-on="Venta" for="buyORsell"></label>
+      </div>
+      
+      <br><br>
+      <label for="price">Precio €: </label><br>
+      <input type="number" id="price" name="price" step="0.01" required />
+      <br><br>
+      <label for="photo">Enlace a fotografía (opc): </label><br>
+      <input type="url" id="photo" name="photo"  />
+      <br><br>
+      <button class="normalize" type="submit">Publicar</button>
+      <button class="normalize" type="reset">Borrar campos</button>
+    </form>
+
+    <script type="module" src="./item-creation.js"></script>
+  </body>
+</html>
