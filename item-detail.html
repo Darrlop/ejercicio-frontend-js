@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./assets/css/style.css">
   <link rel="stylesheet" href="./assets/css/header.css">
+  <link rel="stylesheet" href="./assets/css/spinner.css">
   <title>Chollopop</title>
 </head>
 <body>
@@ -17,17 +18,13 @@
       <h3>Tu web molona de compra-venta</h3>
     </div>
   </header>
+  <nav><h4><a  class='asButton' href="./index.html"> [ Atrás ] </a></h4></nav><hr>
   <br>
   <h2>Detalles del artículo:</h2>
   <section class="item-detail">
-    <div class="lds-ring hidden">
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
+    <div class="loader hidden"></div>
     <div class="button">
-      <button id="backButton">Volver atrás</button>
+      <button disabled id="deleteButton">Borrar anuncio</button>
     </div>
   </section>
 

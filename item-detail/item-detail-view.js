@@ -1,11 +1,13 @@
 
 export function showItem(item, othersDetailsOfItem){
   return `
-    <p><b>Artículo:</b> ${item.name}</p>
+    <h2>Artículo: ${item.name}</h2>
     <p><b>Estado:</b> ${othersDetailsOfItem.saleOrBuy}</p>
     <p><b>${othersDetailsOfItem.priceOrOffer}:</b> ${item.price} €</p>
     <p><b>Descripción:</b> ${item.description}</p>
-    <p><b>Fotografía:</b><p> 
-    <img src=${othersDetailsOfItem.itemPhoto} class="photo-item" alt="foto artículo"> 
+    
+    <section class="frame__detail">
+      <img src=${othersDetailsOfItem.itemPhoto} class="photo-detail" alt="foto artículo"> 
+    </section>
   `
 }

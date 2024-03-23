@@ -4,17 +4,23 @@ import { createItem } from "./item-creation-model.js";
 export const itemCreationController = (itemCreationForm) => {
 
   
+
   itemCreationForm.addEventListener('submit', async (event) => {
 
     event.preventDefault();
-
     const fields = getFormFields(itemCreationForm);
-
-
     console.log(fields);   
-
     const errorsInFields = testFormFields(itemCreationForm);
-    errorsInFields.length === 0 ? await createItem(fields) :  alert (errorsInFields.join(" "));
+
+    // const spinner = itemCreationForm.div.querySelector("loader");
+    const spinner = document.querySelector("#creation .loader");
+    spinner.classList.toggle('hidden');
+    if (errorsInFields.length === 0){
+      await createItem(fields) 
+    } else {
+      alert (errorsInFields.join(" "));
+    }
+    spinner.classList.toggle('hidden');
     window.location.href= "./index.html";
   
       

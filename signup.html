@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="./assets/css/header.css">
+    <link rel="stylesheet" href="./assets/css/spinner.css">
     <title>Chollopop</title>
   </head>
   <body>
@@ -21,14 +22,15 @@
   <br>
   <h2>Registro de usuarios</h2>
 
-  <form id="signup-form">
-    <p>Introduzca un correo electrónico como usuario</p>
-    <label for="email">email: </label>
+  <form id="signup-form" class="frame">
+    <div class="loader hidden"></div>
+    <p><b>Introduzca un email como nombre de usuario</b></p>
+    <label for="email">Correo electrónico: </label><br>
     <input type="email" id="email" name="email" required />
     <br><br>
     
-    <p>Introduzca una contraseña de al menos 8 caracteres</p>
-    <label for="password">Contraseña:</label>
+    <p><b>Introduzca una contraseña de al menos 8 caracteres</b></p>
+    <label for="password">Contraseña:</label><br>
     <input
       type="password"
       id="password"
@@ -37,7 +39,7 @@
       minlength="8"
     />
     <br><br>
-    <label for="password-check">Repita la contraseña:</label>
+    <label for="password-check">Repita la contraseña:</label><br>
     <input
       type="password"
       id="password-check"

@@ -9,6 +9,7 @@ body{
   border: solid 1px lightgray;
   border-radius: 10px;
   padding: 1rem;
+  padding-left: 3rem;
   text-decoration: none;
   color: inherit;
   display: block;
@@ -27,7 +28,7 @@ body{
 .item__details {
   border: solid 1px lightgray;
   border-radius: 10px;
-  padding: 1rem;
+  padding: 3rem;
   text-decoration: none;
   color: inherit;
   display: block;
@@ -35,8 +36,46 @@ body{
   background-color: #c1eac1;
 }
 
+.frame {
+  border: solid 3px  #c1eac1 ;
+  border-radius: 10px;
+  padding: 3rem;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  /* background-color: cornsilk; */
+  background-color: #F8F9F9 ;
+}
+
+.frame__detail {
+  border: solid 3px  #1a1b1a ;
+  border-radius: 10px;
+  padding: 3rem;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  /* background-color: cornsilk; */
+  background-color: #F8F9F9 ;
+  display: flex;
+  overflow: hidden;
+}
+
 .photo-item{
-  width: 100px ;
+  width: 150px ;
+  border-radius: 5px;
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+}
+
+.photo-detail{
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  border-radius: 5px;
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
 }
 
 a {
@@ -68,4 +107,9 @@ button:hover{
 
 button.normalize{
   margin: 1rem 1rem 0rem 0rem;
+}
+
+.hidden {
+  display: none;
+  /*visibility: hidden;*/
 }

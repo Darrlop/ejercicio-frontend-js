@@ -10,13 +10,17 @@ export const loginController = (loginForm) => {
 
   const submitLoginForm = async (loginForm) => {
     const {user, password} = getLoginFormData(loginForm);
-
+    
+    const spinner = document.querySelector("#login .loader");
     try {
+      spinner.classList.toggle('hidden');
       const jwt = await loginUser(user, password);
       localStorage.setItem('tokenJWT', jwt);
       window.location = "../index.html";
     } catch (error) {
       alert (error);
+    }finally{
+      spinner.classList.toggle('hidden');
     }
   }
 

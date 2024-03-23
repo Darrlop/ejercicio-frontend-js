@@ -10,12 +10,25 @@ export const signupController = (signupForm) => {
   signupForm.addEventListener('submit', (event) => {
     event.preventDefault();
     submitSignupForm(signupForm);
+    window.location.href = "./index.html";
   });
 
-  const submitSignupForm = (signupForm) => {
+  const submitSignupForm = async (signupForm) => {
+    const spinner = document.querySelector("#signup-form .loader");
+    spinner.classList.toggle('hidden');
     const {username, password} = getSignupFormData(signupForm);
     const formFormatError = handleSignupFormFormats (signupForm);
-    formFormatError.length === 0 ? signupUser(username, password) :  alert (formFormatError.join(" "));
+    if (formFormatError.length === 0){
+      try {
+        await signupUser(username, password)
+      } catch (error) {
+        alert(error);
+      }
+    }
+    else{
+      alert (formFormatError.join(" "));
+    }
+    spinner.classList.toggle('hidden');
   }
 
 }

@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="./assets/css/header.css">
     <link rel="stylesheet" href="./assets/css/checkbox.css">
+    <link rel="stylesheet" href="./assets/css/spinner.css">
     <title>Chollopop</title>
   </head>
   <body>
@@ -23,7 +24,9 @@
     <nav><h4><a  class='asButton' href="./index.html"> [ Salir ] </a></h4></nav><hr>
     <br>
     <h2>Creación de anuncio</h2>
-    <form id="creation">
+
+    <form id="creation" class="frame">
+      <div class="loader hidden"></div><br>
       <label for="name">Nombre del artículo: </label><br>
       <input type="text" id="name" name="name" required />
       <br><br>
