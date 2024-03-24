@@ -9,8 +9,10 @@ export function showLoginSignupSession(){
 
 export function showLoggedSession(){
   return `
+  <h4>
   <span><a class='log-out asButton' href=""> [ Logout ] </a></span>
   <span> - <span>
   <span> <a class='asButton' href="./item-creation.html"> [ Create Ad ] </a></span>
+  </h4>
   `
 }

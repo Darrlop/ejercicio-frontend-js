@@ -2,14 +2,13 @@ import { getItemById, getUserData, deleteItemById } from "./item-detail-model.js
 import { showItem } from "./item-detail-view.js";
 import { adaptData } from "../utils/func-utils.js";
 
-const goBack = (itemDetailContainer) => {
+// const goBack = (itemDetailContainer) => {
 
-  const deleteButton = document.getElementById('deleteButton');
-  deleteButton.addEventListener('click', () => {
+//   const deleteButton = document.getElementById('deleteButton');
+//   deleteButton.addEventListener('click', () => {
     
-  });
-
-}
+//   });
+// }
 
 
 export async function itemDetailController(itemDetailContainer){

@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="./assets/css/header.css">
     <link rel="stylesheet" href="./assets/css/checkbox.css">
     <link rel="stylesheet" href="./assets/css/spinner.css">
+    <link rel="stylesheet" href="./assets/css/notification.css">
     <title>Chollopop</title>
   </head>
   <body>
@@ -20,10 +21,11 @@
         <h3>Tu web molona de compra-venta</h3>
       </div>
     </header>  
-
-    <nav><h4><a  class='asButton' href="./index.html"> [ Salir ] </a></h4></nav><hr>
-    <br>
-    <h2>Creación de anuncio</h2>
+    <div><h4>
+      <nav><a  class='asButton' href="./index.html"> [ Salir ] </a></nav>
+      <section class="notification hidden"> Esta es una prueba</section>
+    </h4></div>
+    <hr><br><h2>Creación de anuncio</h2>
 
     <form id="creation" class="frame">
       <div class="loader hidden"></div><br>
@@ -31,7 +33,7 @@
       <input type="text" id="name" name="name" required />
       <br><br>
       <label for="description">Descripción: </label><br>
-      <textarea id="description" name="description" rows="10", cols="50"></textarea>
+      <textarea id="description" name="description" rows="10", cols="40"></textarea>
       <br><br>
 
       <!-- <label for="activo">¿Activo?</label>

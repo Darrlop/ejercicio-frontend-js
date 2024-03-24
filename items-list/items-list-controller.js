@@ -1,6 +1,6 @@
 import { getItems } from "./items-list-model.js";
 import { showItem } from "./items-list-view.js";
-import { adaptData } from "../utils/func-utils.js";
+import { adaptData, dispatchEvent } from "../utils/func-utils.js";
 
 
 export async function itemListController(itemListContainer){
@@ -19,7 +19,11 @@ export async function itemListController(itemListContainer){
       itemListContainer.appendChild(itemDiv);
     });
   } catch (error) {
-    throw("Error obteniendo la lista de artículos de la tienda... " + error);
+    //throw("Error obteniendo la lista de artículos de la tienda... " + error);
+    dispatchEvent("error-loading-items", {
+      message: "Error cargando artículos -> " + error,
+      type: 'error'
+    }, itemListContainer);
   }finally{
     spinner.classList.toggle('hidden');
   }

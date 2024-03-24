@@ -6,6 +6,7 @@
   <link rel="stylesheet" href="./assets/css/style.css">
   <link rel="stylesheet" href="./assets/css/header.css">
   <link rel="stylesheet" href="./assets/css/spinner.css">
+  <link rel="stylesheet" href="./assets/css/notification.css">
   <title>Chollopop</title>
 </head>
 <body>
@@ -18,18 +19,14 @@
       <h3>Tu web molona de compra-venta</h3>
     </div>
   </header>
-  <h4><nav id="session"></nav></h4>
-  <hr>
-  <br>
+  <div><h4>
+    <nav id="session"></nav>
+    <section class="notification hidden"></section>
+  </h4></div>
+  <hr><br>
   <h2>Artículos en compra/venta:</h2>
   <section class="item-list">
     <div class="loader hidden"></div>
-    <!-- <div class="lds-ring hidden">
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-    </div> -->
   </section>
 
   <script type ="module" src="chollopop-home.js"></script>

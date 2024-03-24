@@ -1,5 +1,6 @@
 import { urlNoPhoto } from "../utils/const_var.js";
 import { createItem } from "./item-creation-model.js";
+import { dispatchEvent } from "../utils/func-utils.js";
 
 export const itemCreationController = (itemCreationForm) => {
 
@@ -8,15 +9,22 @@ export const itemCreationController = (itemCreationForm) => {
   itemCreationForm.addEventListener('submit', async (event) => {
 
     event.preventDefault();
-    const fields = getFormFields(itemCreationForm);
-    console.log(fields);   
+    const fields = getFormFields(itemCreationForm);  
     const errorsInFields = testFormFields(itemCreationForm);
 
     // const spinner = itemCreationForm.div.querySelector("loader");
     const spinner = document.querySelector("#creation .loader");
     spinner.classList.toggle('hidden');
     if (errorsInFields.length === 0){
-      await createItem(fields) 
+      try {
+        await createItem(fields)
+        dispatchEvent("creation-item", {message: "Anuncio creado con éxito."}, itemCreationForm); 
+      } catch (error) {
+        dispatchEvent("creation-item", {
+          message: "Error en la creación del anuncio->" + error,
+          type: "error"
+        }, itemCreationForm); 
+      }
     } else {
       alert (errorsInFields.join(" "));
     }
@@ -30,9 +38,6 @@ export const itemCreationController = (itemCreationForm) => {
     
     let fields = {};
     const formData = new FormData(itemCreationForm);
-
-    //console.log (itemCreationForm.querySelector('#buyORsell').checked);
-
 
     fields.name = formData.get('name');
     fields.description = formData.get('description');
@@ -68,10 +73,5 @@ export const itemCreationController = (itemCreationForm) => {
       return (urlString.length !== 0) ? false : true;
     }
   }
-
-  // sacar datos y meter en un objeto
-
-  //chequear validez datos
-  //crear item en BBDD
 
 }
