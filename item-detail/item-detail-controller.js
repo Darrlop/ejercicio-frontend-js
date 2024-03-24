@@ -19,7 +19,6 @@ export async function itemDetailController(itemDetailContainer){
     divDetails.classList.add('item__details');
     divDetails.innerHTML = showItem(item, othersDetailsOfItem);
     itemDetailContainer.appendChild(divDetails);
-    
     handleDeleteItemButton(itemDetailContainer, item);
   } catch (error) {
     dispatchEvent ('delete-item', {

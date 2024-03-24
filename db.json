@@ -1,0 +1,127 @@
+{
+  "items": [
+    {
+      "id": 1,
+      "name": "libreta",
+      "description": "libreta color rojo, casi sin usar",
+      "sale": true,
+      "price": 5.5,
+      "userId": 1,
+      "photo": "https://res.cloudinary.com/dyyhithd8/image/upload/v1710875622/libreta_mqkdhb.jpg"
+    },
+    {
+      "id": 2,
+      "name": "caja regalo cuqui",
+      "description": "busco caja mona para regalo",
+      "sale": false,
+      "price": 10,
+      "userId": 1,
+      "photo": ""
+    },
+    {
+      "id": 3,
+      "name": "bicicleta",
+      "description": "bicicleta de paseo. Estado usado",
+      "sale": true,
+      "price": 150,
+      "userId": 1,
+      "photo": ""
+    },
+    {
+      "id": 4,
+      "name": "casco moto",
+      "description": "Golpeado sólo un par de veces",
+      "sale": true,
+      "price": 120,
+      "userId": 2,
+      "photo": "https://res.cloudinary.com/dyyhithd8/image/upload/v1710875621/casco_moto_mb2vul.jpg"
+    },
+    {
+      "id": 5,
+      "name": "móvil",
+      "description": "Samsung a52. Buen estado",
+      "sale": true,
+      "price": 180,
+      "userId": 1,
+      "photo": "https://res.cloudinary.com/dyyhithd8/image/upload/v1710875621/A52_cspqpg.jpg"
+    },
+    {
+      "id": 6,
+      "name": "chaqueta cuero",
+      "description": "Ha tragado mucho Metal y cerveza, pero es una ganga",
+      "sale": true,
+      "price": 130,
+      "userId": 2,
+      "photo": ""
+    },
+    {
+      "id": 7,
+      "name": "apple pencil",
+      "description": "Me urge comprar un pencil por tema laboral",
+      "sale": false,
+      "price": 99.99,
+      "userId": 1,
+      "photo": "https://res.cloudinary.com/dyyhithd8/image/upload/v1710875621/lapiz_apple_wuz914.jpg"
+    },
+    {
+      "id": 8,
+      "name": "camiseta Metallica",
+      "description": "Camiseta oficila color negro del grupo Metallica. Como nueva",
+      "sale": true,
+      "price": 19,
+      "userId": 2,
+      "photo": ""
+    },
+    {
+      "id": 9,
+      "name": "silla escritorio",
+      "description": "Busco silla de altura regulable y cómoda",
+      "sale": false,
+      "price": 35,
+      "userId": 1,
+      "photo": ""
+    },
+    {
+      "name": "Mala idea",
+      "description": "Una idea mala, pero barata",
+      "sale": true,
+      "price": 5,
+      "photo": "https://res.cloudinary.com/dyyhithd8/image/upload/v1710875978/no-photo_nt2ttr.jpg",
+      "userId": 1,
+      "updatedAt": "2024-03-22T14:14:10.220Z",
+      "id": 10
+    },
+    {
+      "name": "Idea original",
+      "description": "Busco una idea realmente original",
+      "sale": false,
+      "price": 20,
+      "photo": "https://res.cloudinary.com/dyyhithd8/image/upload/v1710875978/no-photo_nt2ttr.jpg",
+      "userId": 1,
+      "updatedAt": "2024-03-22T14:20:43.191Z",
+      "id": 11
+    },
+    {
+      "name": "Ratón steampunk",
+      "description": "Ratón metálico artesanal de estilo steampunk",
+      "sale": true,
+      "price": 199,
+      "photo": "https://res.cloudinary.com/dyyhithd8/image/upload/v1711148695/raton_steampunk_qnfolk.jpg",
+      "userId": 1,
+      "updatedAt": "2024-03-22T23:40:05.574Z",
+      "id": 14
+    }
+  ],
+  "users": [
+    {
+      "username": "usuarioUNO@mail.com",
+      "password": "$2b$10$CdmFUu.m/HCwCQdkDdb8Ne8zCXj092vGp95GvACFrD/H/bG4fRdiG",
+      "id": 1
+    },
+    {
+      "username": "usuarioDOS@mail.com",
+      "password": "$2b$10$oT1GC3IxtBAGhwRPIPWgnu.D/Uuz/BPMIZgxUvP2XhMBBZvwTgMLu",
+      "id": 2
+    }
+  ]
+}

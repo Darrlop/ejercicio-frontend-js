@@ -2,7 +2,6 @@ import { urlBase } from "../utils/const_var.js";
 
 export const createItem = async (itemFields) => {
 
-  //const url = urlBase + "/posts";
   const url = urlBase;
   const tokenJWT = localStorage.getItem("tokenJWT");
 

@@ -4,7 +4,13 @@ import { dispatchEvent } from "../utils/func-utils.js";
 
 export const itemCreationController = (itemCreationForm) => {
 
-  
+  if (localStorage.getItem('tokenJWT') === null){
+    dispatchEvent("creation-item", {
+      message: "Sólo pueden crear anuncios los usuarios que hayan hecho login",
+      type: 'error',
+      redirection: true
+    }, itemCreationForm); 
+  }
 
   itemCreationForm.addEventListener('submit', async (event) => {
 
@@ -54,9 +60,6 @@ export const itemCreationController = (itemCreationForm) => {
     }, itemCreationForm);
   
   }
-
-
-
 
 
   const getFormFields = (itemCreationForm) => {

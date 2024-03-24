@@ -7,7 +7,6 @@ export const signupController = (signupForm) => {
   signupForm.addEventListener('submit', (event) => {
     event.preventDefault();
     submitSignupForm(signupForm);
-    //window.location.href = "./index.html";
   });
 
   const submitSignupForm = async (signupForm) => {

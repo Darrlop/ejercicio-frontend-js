@@ -3,7 +3,6 @@ import { notificationController } from "./notification/notification-controller.j
 
 document.addEventListener('DOMContentLoaded', () => {
 
-
   const notificationContainer = document.querySelector('.notification');
   const { showNotification } = notificationController(notificationContainer);
 

@@ -10,10 +10,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const sessionContainer = document.querySelector("#session");
   sessionController(sessionContainer);
 
-
   const itemsListContainer = document.querySelector('.item-list');
   itemsListContainer.addEventListener('error-loading-items', (event) => {
-    showNotification(event.detail.message, event.detail.type);
+    showNotification(event.detail.message, event.detail.type, event.detail.redirection);
     event.stopPropagation();
   });
   itemListController(itemsListContainer);  

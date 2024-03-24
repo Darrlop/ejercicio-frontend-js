@@ -19,7 +19,6 @@ export async function itemListController(itemListContainer){
       itemListContainer.appendChild(itemDiv);
     });
   } catch (error) {
-    //throw("Error obteniendo la lista de artículos de la tienda... " + error);
     dispatchEvent("error-loading-items", {
       message: "Error cargando artículos -> " + error,
       type: 'error'

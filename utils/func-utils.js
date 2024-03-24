@@ -5,7 +5,6 @@ export const dispatchEvent = (eventName, data, element) => {
   const event = new CustomEvent(eventName, {
     detail: data
   });
-
   element.dispatchEvent(event);
 }
 
@@ -20,8 +19,6 @@ export function adaptData(data){
 
 
 export const getUserName = async (tokenJWT) => {
-
-  //const tokenJWT = localStorage.getItem('tokenJWT');
     
   try {
     const response = await fetch(urlAuthMe, {

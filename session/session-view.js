@@ -13,7 +13,7 @@ export function showLoggedSession(userName){
   <span><a class='log-out asButton' href=""> [ Logout ] </a></span>
   <span> - <span>
   <span> <a class='asButton' href="./item-creation.html"> [ Create Ad ] </a></span>
-  <span>  # Usuario: ${userName} </span>
+  <span class = 'user'> - ${userName} </span>
   </h4>
   `
 }
