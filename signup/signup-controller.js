@@ -1,8 +1,5 @@
-// BALIZA: spinner
-// BALIZA: notificaciones
-
 import { signupUser } from "./signup-model.js";
-import { dispatchEvent } from "../utils/func-utils.js"; // BALIZA: para usar con notificaciones
+import { dispatchEvent } from "../utils/func-utils.js"; 
 
 
 export const signupController = (signupForm) => {
@@ -10,7 +7,7 @@ export const signupController = (signupForm) => {
   signupForm.addEventListener('submit', (event) => {
     event.preventDefault();
     submitSignupForm(signupForm);
-    window.location.href = "./index.html";
+    //window.location.href = "./index.html";
   });
 
   const submitSignupForm = async (signupForm) => {
@@ -21,12 +18,19 @@ export const signupController = (signupForm) => {
     if (formFormatError.length === 0){
       try {
         await signupUser(username, password)
+        dispatchEvent("signup-Message", {
+          message: "Usuario creado con éxito",
+          redirection: true
+        }, signupForm);
       } catch (error) {
-        alert(error);
+        dispatchEvent("signup-Message", {
+          message: error,
+          type: error,
+        }, signupForm);
       }
     }
     else{
-      alert (formFormatError.join(" "));
+      showErrorsCreation(formFormatError, signupForm);
     }
     spinner.classList.toggle('hidden');
   }
@@ -68,4 +72,16 @@ function handleSignupFormFormats(signupForm){
     {errors.push("-Error: Las contraseñas introducidas no coinciden");}
   return errors;
 
+}
+
+function showErrorsCreation(errorsInFields, signupForm){
+
+  let allErrors = '';
+  for (const error of errorsInFields) {
+    allErrors += error + '<br>';
+  }
+  dispatchEvent("signup-Message", {
+    message: allErrors,
+    type: 'error',
+  }, signupForm);
 }

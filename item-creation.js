@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const itemCreationForm = document.querySelector("#creation");
   itemCreationForm.addEventListener("creation-item", (event) =>{
-    showNotification(event.detail.message, event.detail.type);
+    showNotification(event.detail.message, event.detail.type, event.detail.redirection);
     event.stopPropagation();
   });
   itemCreationController(itemCreationForm);

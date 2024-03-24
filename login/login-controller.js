@@ -1,4 +1,5 @@
 import { loginUser } from "./login-model.js";
+import { dispatchEvent } from "../utils/func-utils.js";
 
 
 export const loginController = (loginForm) => {
@@ -18,7 +19,10 @@ export const loginController = (loginForm) => {
       localStorage.setItem('tokenJWT', jwt);
       window.location = "../index.html";
     } catch (error) {
-      alert (error);
+      dispatchEvent('login-error', {
+        message: error,
+        type: 'error'
+      }, loginForm);
     }finally{
       spinner.classList.toggle('hidden');
     }

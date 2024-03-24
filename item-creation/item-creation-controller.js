@@ -16,23 +16,48 @@ export const itemCreationController = (itemCreationForm) => {
     const spinner = document.querySelector("#creation .loader");
     spinner.classList.toggle('hidden');
     if (errorsInFields.length === 0){
-      try {
-        await createItem(fields)
-        dispatchEvent("creation-item", {message: "Anuncio creado con éxito."}, itemCreationForm); 
-      } catch (error) {
-        dispatchEvent("creation-item", {
-          message: "Error en la creación del anuncio->" + error,
-          type: "error"
-        }, itemCreationForm); 
-      }
+      handleCreationItem(fields);
     } else {
-      alert (errorsInFields.join(" "));
+      showErrorsCreation(errorsInFields);
     }
     spinner.classList.toggle('hidden');
-    window.location.href= "./index.html";
-  
-      
+    
   });
+
+
+  async function handleCreationItem(fields){
+    
+    try {
+      await createItem(fields);
+      dispatchEvent("creation-item", {
+        message: "Anuncio creado con éxito.",
+        redirection: true
+      }, itemCreationForm); 
+    } catch (error) {
+      dispatchEvent("creation-item", {
+        message: "Error en la creación del anuncio->" + error,
+        type: "error"
+      }, itemCreationForm); 
+    }
+
+  }
+
+  function showErrorsCreation(errorsInFields){
+
+    let allErrors = '';
+    for (const error of errorsInFields) {
+      allErrors += error + '<br>';
+    }
+    dispatchEvent('creation-item', {
+      message: allErrors,
+      type: 'error'
+    }, itemCreationForm);
+  
+  }
+
+
+
+
 
   const getFormFields = (itemCreationForm) => {
     
@@ -48,15 +73,13 @@ export const itemCreationController = (itemCreationForm) => {
     return fields;
   }
 
-
   const testFormFields = (itemCreationForm) => {
-
     let errors = [];
+
     if (!isValidPrice(itemCreationForm.querySelector('#price').value))
       { errors.push(" Error: el precio introducido no es numérico") }
     if (!testURL(itemCreationForm.querySelector('#photo').value))
       { errors.push("Error: La url a la fotografía no es válida"); }
-    
     return errors;
   }
 
@@ -73,5 +96,9 @@ export const itemCreationController = (itemCreationForm) => {
       return (urlString.length !== 0) ? false : true;
     }
   }
+
+
+
+
 
 }

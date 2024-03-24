@@ -1,4 +1,4 @@
-import { urlNoPhoto } from "./const_var.js";
+import { urlNoPhoto, urlAuthMe } from "./const_var.js";
 
 // Función que crea y lanza un evento 
 export const dispatchEvent = (eventName, data, element) => {
@@ -17,3 +17,21 @@ export function adaptData(data){
   details["itemPhoto"] = (data.photo === "") ? urlNoPhoto : data.photo;
   return details;
 } 
+
+
+export const getUserName = async (tokenJWT) => {
+
+  //const tokenJWT = localStorage.getItem('tokenJWT');
+    
+  try {
+    const response = await fetch(urlAuthMe, {
+      headers: {
+        'Authorization': `Bearer ${tokenJWT}`
+      }
+    });
+    const data = await response.json();
+    return data.username;
+  } catch (error) {
+    throw new Error('Error accediendo a datos del usuario');
+  }
+}

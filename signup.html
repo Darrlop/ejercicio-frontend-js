@@ -19,15 +19,18 @@
         <h3>Tu web molona de compra-venta</h3>
       </div>
     </header>  
-  <nav><h4><a  class='asButton' href="./index.html"> [ Salir ] </a></h4></nav><hr>
-  <br>
+  <div><h4>
+    <nav id="session"><a  class='asButton' href="./index.html"> [ Salir ] </a></nav>
+    <section class="notification hidden"></section>
+  </h4></div>
+  <hr><br>
   <h2>Registro de usuarios</h2>
 
   <form id="signup-form" class="frame">
     <div class="loader hidden"></div>
     <p><b>Introduzca un email como nombre de usuario</b></p>
     <label for="email">Correo electrónico: </label><br>
-    <input type="email" id="email" name="email" required />
+    <input type="text" id="email" name="email" required />
     <br><br>
     
     <p><b>Introduzca una contraseña de al menos 8 caracteres</b></p>

@@ -1,11 +1,14 @@
 import { showLoginSignupSession, showLoggedSession } from "./session-view.js";
+import { getUserName } from "../utils/func-utils.js";
 
 
 
-export function sessionController(sessionContainer){
+export async function sessionController(sessionContainer){
 
-  if (isLogged()){
-    sessionContainer.innerHTML = showLoggedSession();
+  const token = isLogged();
+  if (token !== null){
+    const username = await getUserName(token);
+    sessionContainer.innerHTML = showLoggedSession(username);
     const logoutButton = sessionContainer.querySelector('.log-out');
     logoutButton.addEventListener('click', (event) => {
       event.preventDefault();

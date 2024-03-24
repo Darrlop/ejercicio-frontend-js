@@ -1,14 +1,6 @@
 import { getItemById, getUserData, deleteItemById } from "./item-detail-model.js";
 import { showItem } from "./item-detail-view.js";
-import { adaptData } from "../utils/func-utils.js";
-
-// const goBack = (itemDetailContainer) => {
-
-//   const deleteButton = document.getElementById('deleteButton');
-//   deleteButton.addEventListener('click', () => {
-    
-//   });
-// }
+import { adaptData, dispatchEvent } from "../utils/func-utils.js";
 
 
 export async function itemDetailController(itemDetailContainer){
@@ -30,7 +22,11 @@ export async function itemDetailController(itemDetailContainer){
     
     handleDeleteItemButton(itemDetailContainer, item);
   } catch (error) {
-    alert(error);
+    dispatchEvent ('delete-item', {
+      message: error,
+      type: 'error',
+      redirection: true
+    }, itemDetailContainer);
   }finally{
     spinner.classList.toggle('hidden');
   }
@@ -51,12 +47,15 @@ export async function itemDetailController(itemDetailContainer){
       try {
         spinner.classList.toggle('hidden');
         await deleteItemById(itemId, tokenJWT);
-        // setTimeout(() => {
-        //   window.location.href = 'index.html'
-        // }, 2000);
-        window.location.href = 'index.html'
+        dispatchEvent ('delete-item', { 
+          message: "Artículo borrado con éxito",
+          redirection: true
+        }, itemDetailContainer);
       } catch (error) {
-        alert(error)
+        dispatchEvent ('delete-item', { 
+          message: error,
+          type: 'error'
+        }, itemDetailContainer)
       } finally {
         spinner.classList.toggle('hidden');
       }

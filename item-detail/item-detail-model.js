@@ -43,8 +43,6 @@ export const deleteItemById = async (itemId, tokenJWT) => {
     if (!response.ok) {
       const data = await response.json()
       throw new Error(data.message);
-    } else {
-      alert ("Artículo borrado");
     }
   } catch (error) {
     throw new Error('Error borrando artículo')

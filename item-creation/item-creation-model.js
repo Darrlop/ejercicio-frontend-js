@@ -24,23 +24,14 @@ export const createItem = async (itemFields) => {
         'Authorization': `Bearer ${tokenJWT}`
       }
     });
-
+      console.log("xxxx -> antes del !response")
     if(!response.ok){
       const dataResponse = await response.json();
       throw new Error(dataResponse.message);
-    }else{
-      alert ("Item dado de alta con éxito");
     }
   } catch (error) {
     throw error;
   }
 
-
-// COnstruyo la url
-// consigo el token
-// fabrico el body
-// let response
-// uso fetch para envío con POST
-//    Testeo respuest del servidor
 
 }

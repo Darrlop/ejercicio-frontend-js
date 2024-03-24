@@ -27,7 +27,7 @@ export const loginUser = async (user, password) => {
       return data.accessToken;
     }
   } catch (error) {
-    throw ("Error realizando el login de usuario... " + error);
+    throw (error);
   }
 
 }

@@ -13,8 +13,6 @@ export const signupUser = async(username, password) => {
 
   if (!response.ok){
     throw new Error ("Error creando usuario nuevo");
-  }else{
-    alert ("Usuario creado con éxito");
   }
 
 }

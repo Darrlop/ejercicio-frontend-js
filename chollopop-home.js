@@ -4,16 +4,11 @@ import { notificationController } from "./notification/notification-controller.j
 
 document.addEventListener('DOMContentLoaded', () => {
 
-
-  const sessionContainer = document.querySelector("#session");
-  sessionController(sessionContainer);
-
-
-
   const notificationContainer = document.querySelector(".notification");
   const {showNotification} = notificationController(notificationContainer);
 
-
+  const sessionContainer = document.querySelector("#session");
+  sessionController(sessionContainer);
 
 
   const itemsListContainer = document.querySelector('.item-list');
