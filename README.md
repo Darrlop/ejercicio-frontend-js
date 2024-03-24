@@ -15,7 +15,7 @@ Se utilizará:
   - Para ello, se basa en la utilidad open source Json-server.
 
 El objetivo principal es adquirir un conocimiento básico de dichas herramientas, así como la elaboración de las funcionalidades más habituales de una aplicación de este tipo.
-Concretamente, lo que debe poder realizarse con la API sería:
+Concretamente, lo que debe poder realizarse con la aplicación sería:
 
   - Hacer login/logout y signup
   - Obtener listado general de anuncios/artículos
