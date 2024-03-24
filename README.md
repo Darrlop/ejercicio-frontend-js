@@ -168,6 +168,7 @@ Botón **login** accesible desde el header de las páginas
 endpoint: POST "http://127.0.0.1:8000/auth/login"
 
 Una vez accedido, el botón de login se ve reemplazado por uno de **logout**, para cerrar la sesión
+Así mismo, cuando el usuario está logeado, aparece su **nombre de usuario en el header** de la página
 
 #
 
